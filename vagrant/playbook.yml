@@ -42,12 +42,15 @@
     args:
       chdir: /home/ubuntu/Gerrymandering-Analysis
 
-  - name: Move html files to /usr/share/nginx/html
-    command: mv /home/ubuntu/Gerrymandering-Analysis/308uipages/ /var/www/html/
+  - name: Copy html files to /usr/share/nginx/html
+    copy:
+      src: /home/ubuntu/Gerrymandering-Analysis/308uipages/
+      dest: /var/www/html/
   - name: Delete default nginx index.html
     file: 
       path: /var/www/html/index.nginx-debian.html
       state: absent
-  - name: Move sample html file to site root
-    command: mv /var/www/html/308uipages/basic\ user.html /var/www/html/index.html 
-
+  - name: Copy sample html file to site root
+    copy:
+      src: /home/ubuntu/Gerrymandering-Analysis/308uipages/basic user.html
+      dest: /var/www/html/index.html
