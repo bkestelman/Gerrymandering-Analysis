@@ -28,3 +28,10 @@ hs_err_pid*
 
 # Local Vagrant environment
 .vagrant/
+
+# Gradle directories
+.gradle/
+build/
+
+# MAC DS_Store
+.DS_Store
