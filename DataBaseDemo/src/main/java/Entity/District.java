@@ -2,19 +2,21 @@ package Entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "District")
 public class District {
-	@Id
+	@Id @GeneratedValue
+	long id;
+	@Column(name = "stateId", nullable = false)
 	String stateId;
-	@Id
+	@Column(name = "districtId", nullable = false)
 	int districtId;
-	@Id
+	@Column(name = "year", nullable = false)
 	int year;
-	
 	@Column(name = "voteRep", nullable = false)
 	int    voteRep;
 	@Column(name = "voteDem", nullable = false)

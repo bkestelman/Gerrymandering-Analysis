@@ -2,14 +2,19 @@ package Entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "State")
 public class State {
 	
-	@Id
+	@Id @GeneratedValue
+	long id;
+	@Column(name = "stateId", nullable = false)
 	String stateId;
-	@Id
+	@Column(name = "year", nullable = false)
 	int	   year;
 	@Column(name = "stateName", nullable = false)
 	String stateName;
